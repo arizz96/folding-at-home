@@ -1,5 +1,5 @@
 FROM debian:wheezy-slim
-LABEL maintainer="john.k.tims@gmail.com"
+LABEL maintainer="arizz96@gmail.com"
 
 ENV FAH_VERSION_MINOR=7.4.4
 ENV FAH_VERSION_MAJOR=7.4
@@ -19,5 +19,12 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 # Web viewer
 EXPOSE 7396
 
+# Default settings
+ENV USER "Anonymous"
+ENV TEAM "0"
+ENV ENABLE_GPU "false"
+ENV ENABLE_SMP "true"
+ENV POWER "medium"
+
 ENTRYPOINT ["FAHClient", "--web-allow=0/0:7396", "--allow=0/0:7396"]
-CMD ["--user=Anonymous", "--team=0", "--gpu=false", "--smp=true", "--power=full"]
+CMD ["--user=${USER}", "--team=${TEAM}". "--passkey=${PASSKEY}", "--gpu=${ENABLE_GPU}", "--smp=${ENABLE_SMP}", "--power=${POWER}"]
