@@ -27,4 +27,4 @@ ENV ENABLE_SMP "true"
 ENV POWER "medium"
 
 ENTRYPOINT ["FAHClient", "--web-allow=0/0:7396", "--allow=0/0:7396"]
-CMD ["--user=${USER}", "--team=${TEAM}". "--passkey=${PASSKEY}", "--gpu=${ENABLE_GPU}", "--smp=${ENABLE_SMP}", "--power=${POWER}"]
+CMD ["--user=${USER}", "--team=${TEAM}", "--passkey=${PASSKEY}", "--gpu=${ENABLE_GPU}", "--smp=${ENABLE_SMP}", "--power=${POWER}"]
